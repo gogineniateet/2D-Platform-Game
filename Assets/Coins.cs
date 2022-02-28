@@ -6,12 +6,12 @@ public class Coins : MonoBehaviour
 {
     Score score;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
         Destroy(gameObject);
 
-        score = GameObject.Find("Score").GetComponent<Score>();
-       // Score.ScoreUpdate(1);
+        score = GameObject.Find("ScoreManager").GetComponent<Score>();
+        score.ScoreUpdate(10);
 
     }
 
